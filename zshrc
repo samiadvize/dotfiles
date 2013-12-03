@@ -10,10 +10,6 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ssd="ssh jbreux@dev.iadvize.com"
-alias el-start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
-alias el-stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
-alias el-restart="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist && launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.elasticsearch.plist"
 
 
 # Set to this to use case-sensitive completion
@@ -45,9 +41,13 @@ alias el-restart="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.elast
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx sublime)
+plugins=(git brew osx sublime)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
+DEFAULT_USER="jbreux"
+
+if [ -d /opt/boxen ]; then
+  source /opt/boxen/env.sh
+fi
