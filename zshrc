@@ -46,7 +46,7 @@ plugins=(git brew osx sublime)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-DEFAULT_USER="jbreux"
+DEFAULT_USER="samiadvize"
 
 if [ -d /opt/boxen ]; then
   source /opt/boxen/env.sh
